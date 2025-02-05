@@ -31,6 +31,6 @@ docker exec -it squash-squash-tm-1 /bin/sh
 chmod +x /db/init.sh
 /db/init.sh
 ```
-Login et mot de passe pour cette base :
+Login et mot de passe pour cette base (à changer dès que c'est en prod):
 Login: admin
 Mot de passe: VJRIzIxpDR5GDD2LxklQE
