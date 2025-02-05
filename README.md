@@ -11,12 +11,26 @@ docker-compose up -d
 http://localhost:8090/squash/
 
 Attention, la première fois, il faut attendre quelques minutes, le temps que la base de données soit initialisée.
-Vous pouvez utiliser l'instruction suivante pour voir où en est l'isntallation
+Vous pouvez utiliser l'instruction suivante pour voir où en est l'installation :
 # Voir les logs des containers
 ```bash
 docker-compose logs -f
 ```
+Quand la ligne 
+```bash
+Service: [JIRA-SYNC] - Begin Synchronisation with JIRA.
+```
+apparaît, c'est que l'application est prête à fonctionner
 # Supprimer les containers et les volumes
 ```bash
 docker-compose down --volumes
 ```
+# Importer la base de données /db/dump_squash.sql
+```bash
+docker exec -it squash-squash-tm-1 /bin/sh
+chmod +x /db/init.sh
+/db/init.sh
+```
+Login et mot de passe pour cette base :
+Login: admin
+Mot de passe: VJRIzIxpDR5GDD2LxklQE
