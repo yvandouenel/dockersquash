@@ -1,6 +1,9 @@
 # Configuration
 Depuis le répertoire racine (qui comprend docker-compose.yml), copier le fichier .env.example et donnez des valeurs sécurisées aux deux mots de passe
 
+# Import base de données
+Si vous souhaitez importer une base de données squash (postgres) existante, il faut la placer dans db/dump_squash.sql
+
 # Installation
 Lancer les containers
 ```bash
@@ -26,6 +29,7 @@ apparaît, c'est que l'application est prête à fonctionner
 docker-compose down --volumes
 ```
 # Importer la base de données /db/dump_squash.sql
+Attention, cela sous-entend que vous avez placé le fichier dump_squash.sql dans le répertoire db
 ```bash
 docker exec -it squash-squash-tm-1 /bin/sh
 chmod +x /db/init.sh
